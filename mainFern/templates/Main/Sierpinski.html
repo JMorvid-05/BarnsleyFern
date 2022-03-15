@@ -1,0 +1,37 @@
+{% include 'Main/Layouts.html' %} {% block content %}
+{% load static %}
+
+<div class="card-deck" style="margin-right: 0%;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Wacław Sierpiński</h5>
+      <img src="{% static 'img/sierpinski.jpg' %}" class="text-center img-fluid img-thumbnail mx-auto d-block" style="width: 50%;" >
+      <div class="text-center">
+      <p class="card-description"><img src="{% static 'img/newbornSky.png' %}" class="icon">Fecha de nacimiento: 1882<img src="{% static 'img/newborn.png' %}" class="icon"> </p>
+      <p> <img src="{% static 'img/citizenship.png' %}" class="icon"> Nacionalidad: Rusa <img src="{% static 'img/rusia.png' %}" class="icon img-fluid" alt="Responsive image"></p>
+      <p> <img src="{% static 'img/graduation.png' %}" class="icon"> Estudios: <br> Matemáticas <img src="{% static 'img/mathematics.png' %}" class="icon img-fluid" alt="Responsive image"> (1904)  </p>
+      </div>
+    </div>
+    
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Clic en "Run"</h5>
+      <iframe src="https://trinket.io/embed/python/f5cac0bd16?outputOnly=true&runOption=run" width="100%" height="550" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    
+  </div>
+  <div class="card">
+    <div class="card-body">
+     
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

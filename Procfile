@@ -1,0 +1,1 @@
+web: gunicorn Barnsley_Fern.wsgi

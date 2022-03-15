@@ -1,0 +1,41 @@
+{% include 'Main/Layouts.html' %} {% block content %}
+{% load static %}
+
+<div class="card-deck" style="margin-right: 0%;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Michael Fielding Barnsley</h5>
+      <img src="https://maths.anu.edu.au/files/styles/anu_doublenarrow_440_587/public/Barnsley%252C%2520Michael.jpg?itok=a82svwV2" class="text-center img-fluid img-thumbnail mx-auto d-block" style="width: 50%;" >
+      <div class="text-center">
+      <p class="card-description"><img src="{% static '/img/newbornSky.png' %}" class="icon">Fecha de nacimiento: 1946<img src="{% static 'img/newborn.png' %}" class="icon"> </p>
+      <p> <img src="{% static 'img/citizenship.png' %}" class="icon"> Nacionalidad: Estadounidense <img src="{% static 'img/united-states.png' %}" class="icon img-fluid" alt="Responsive image"></p>
+      <p> <img src="{% static 'img/graduation.png' %}" class="icon"> Estudios: <br> Matemáticas <img src="{% static 'img/mathematics.png' %}" class="icon img-fluid" alt="Responsive image"> (1968)  <br> Química Teórica <img src="{% static 'img/chemistry.png' %}" class="icon"> (1972)  </p>
+      <p><i>"Fractal geometry will make you see everything differently" Fractals Everywhere 1988</i></p>
+      </div>
+    </div>
+    
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center">Clic en "Run"</h5>
+      <iframe src="https://trinket.io/embed/python/10ea1fc892?outputOnly=true&runOption=run" width="100%" height="550"  frameborder="10" marginwidth="0" marginheight="10" allowfullscreen></iframe>
+    </div>
+    
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Funciones de transformación de coordenadas</h5>
+      <img src="{% static 'img/formula.png' %}" class="img-fluid" alt="Responsive image">
+      <p class="card-text">Las funciones tienen una probabilidad para ser usadas.</p>
+      <img src="{% static 'img/prob.png' %}" class="img-fluid" alt="Responsive image">
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

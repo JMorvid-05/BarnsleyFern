@@ -1,0 +1,31 @@
+body {
+    background-image: url("https://fondosmil.com/fondo/18820.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+}
+.icon{
+    width: 7%;
+}
+.imgBarnsley{
+    width: 80%;
+
+}
+.marginR{
+    margin-right: 0%;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.logoUD {
+    width: 3%;
+}
