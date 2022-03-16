@@ -21,6 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.Barnsley),
+    path('code/', views.code, name='code'),
     path('barnsley/', views.Barnsley, name='barnsley')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

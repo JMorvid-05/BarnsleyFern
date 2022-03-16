@@ -1,0 +1,131 @@
+{% include 'Main/Layouts.html' %} {% block content %}
+<div class="card">
+    <a href="{% url 'barnsley' %}" class="btn btn-info">Volver al Menú</a>
+    <div class="card-body">
+      <pre>
+          <code>
+              #Librerías a Usar
+            import random
+            import turtle
+            x,y=0,0
+            numbers=[1,2,3,4]
+            #Probabilidad que tiene la función a usarse
+            prob=[1,7,7,85]
+            #Lista de repetición de los números
+            amountNum=[0,0,0,0]
+            #Lista posición
+            pos=[0,0,0,0]
+            #Creamos un objeto de tipo Tortuga
+            t = turtle.Turtle('turtle')
+            #Ocultamos la tortuga
+            t.hideturtle()
+            
+            t.pencolor("green")
+            #creamos una lista de longitud 100 llena de 0
+            l=[0]*100
+            #Creamos las listas de X y Y acorde a la probabilidad
+            #de menor a mayor
+            xf=[0,0,0.2,0.23,-0.15,0.26,0.85,-0.04]
+            yf=[0,0.16,-0.26,0.22,0.28,0.24,0.04,0.85]
+            cf=[0,0,0,1.6,0,0.44,0,1.6]
+            #Asignamos a la tortuga la posición inicial
+            t.setx(0)
+            t.sety(0)
+            #Definimos función de posicionar aleatoriamente un número
+            #en la lista pos, para guardar aleatoriamente los 4 números
+            #de la lista numbers
+            def randPos():
+                i=0
+                #Hacemos un ciclo que se detendrá hasta
+                #que la cantidad de 0 en la lista sea 0
+                while(pos.count(0)>=1):
+                    #n guardará un número de la lista numbers
+                    #que será seleccionado aleatoriamente
+                    n=random.choice(numbers)
+                    #si el número no está en la posición, será guardado
+                    if not n in pos:
+                        pos[i]=n
+                        #incrementamos en 1
+                        i+=1
+            #creamos la función fillListRandom para llenar
+            #la lista l 
+            def fillListRandom():
+                i,j=0,0
+                #mientras exista 0 en la lista, hará el ciclo
+                while(l.count(0)>=1):
+                    #Genera un número aleatorio entre 0 a 100
+                    r=random.randrange(100)
+                    # not(l[r]) significa que el valor en esa posición está vacío
+                    # (amountNum[i] &#60; prob[i]) significa que, siendo la lista amountNum el número de veces
+                    #que está en la lista el número en la posición i es menor al número máximo de veces
+                    #que debe estar
+                    #si esas dos condiciones son verdaderas
+                    if not(l[r]) and (amountNum[i] &#60; prob[i]):
+                        #Asignamos en la posición el número
+                        l[r]=pos[i]
+                        #autoincrementamos
+                        amountNum[i]+=1
+                        #por último una condición que, al cumplirse, se encargará de pasar
+                        #al siguiente número de la lista
+                        if amountNum[i]==prob[i]:
+                            i+=1 
+            
+            
+            
+            def chooseRandom():
+            #Esta función escoge aleatoriamente un elemento de la 
+            #lista l
+                nc=random.choice(l)
+                nc=pos.index(nc)
+                #y retornará la posición donde se encuentra 
+                # el número en la lista pos
+                return nc
+        
+            def moveTurtle(x,y):
+                #la máxima velocidad que permite es 10
+                t.speed(10)
+                #dejará de dibujar la tortuga, hasta
+                #que le digamos que vuelva a bajar el lapiz
+                t.penup()
+                #la mandamos a las cordenadas x,y
+                #la multiplicación de x y y es para poder apreciar mejor el helecho
+                t.goto(65 * x, 37 * y - 200)
+                #bajamos el lápiz
+                t.pendown()
+                #y le pedimos que dibuje un círculo de tamaño 3
+                t.dot(3)
+            #========================================#    
+            #Inicio del programa
+            #ejecutamos las funciones
+            randPos()
+            fillListRandom()
+            #11000 puede ser cambiado a gusto
+            for i in range(11000):
+                moveTurtle(x,y)
+                #nr almacena el índice(posición en la lista) del número
+                #en pos 
+                #del número seleccionado
+                nr=chooseRandom()
+                #Dado que guardamos la matriz de cambio de base en 3 listas:
+                #una para X, otra para Y y para la matriz constante.
+                #como la lista pos tiene 4 elementos(cada elemento con su probabilidad),
+                #al multiplicarlo por 2, nr tendrá el valor de la posición de la 
+                #primera fila de la matriz de cambio de base de las 3 listas
+                nr=(nr*2)
+                #operamos
+                x=(x*xf[nr])+(y*yf[nr])+cf[nr]
+                #autoincrementamos 1 para asignar a Y con el valor de la segunda fila 
+                #la matriz de cambio de base + su constante
+                nr+=1
+                y=(x*xf[nr])+(y*yf[nr])+cf[nr]
+            #Fin del programa
+            #===========================================#
+          </code>
+      </pre>
+
+
+
+
+    </div>
+</div>
+{% endblock %}
